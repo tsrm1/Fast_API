@@ -1,0 +1,27 @@
+https://fastapi.tiangolo.com/
+
+
+python -m venv venv --upgrade-deps
+.\venv\Scripts\activate
+pip freeze > requirements.txt
+pip install fastapi
+
+
+uvicorn fast_api_server:app --reload              # Запуск сервера на стандартном порту 8000
+uvicorn fast_api_server:app --reload --port 8001  # Запуск сервера на порту 8001
+
+http://127.0.0.1:8000                             # Доступ к серверу API
+http://127.0.0.1:8000/items/5?q=somequery         # Доступ к серверу API
+
+You already created an API that:
+
+Receives HTTP requests in the paths / and /items/{item_id}.
+Both paths take GET operations (also known as HTTP methods).
+The path /items/{item_id} has a path parameter item_id that should be an int.
+The path /items/{item_id} has an optional str query parameter q.
+
+
+Interactive API docs
+
+http://127.0.0.1:8000/docs                        # Доступ к интерактивной документации (Swagger UI)
+http://127.0.0.1:8000/redoc                       # Доступ к интерактивной документации (ReDoc)
